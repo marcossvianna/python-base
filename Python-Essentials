@@ -1,0 +1,420 @@
+##############################################
+BOAS VINDAS
+##############################################
+
+Boas-vindas ao treinamento Python ESSENTIALS!
+Fundamentos essenciais para programar com Python
+
+Você está iniciando o Python ESSENTIALS que é o primeiro passo para começar a sua carreira em desenvolvimento, este treinamento é pensado para pessoas que nunca tiveram contato com programação antes, ou que já possuem algum conhecimento em alguma outra linguagem e precisam aprender Python.
+
+Duração estimada em horas: 20h
+
+ATENÇÃO: Se você já fez o treinamento Python BASE do pacote Python Expert então não precisa fazer o Python ESSENTIALS, pois este conteúdo é o mesmo contido nos 3 primeiros capítulos do Python BASE
+O Python ESSENTIALS consiste em um recorte dos 3 primeiros capítulos do treinamento PYTHON BASE aonde vamos desde a teoria base do que é programação, instalação e configuração do ambiente, escolha de um editor de código e criação do seu primeiro script até a criação de vários pequenos programas que vão abordar as principais funcionalidades do Python e vamos também criar um projeto completo do zero com as melhores práticas do mercado, você pode se matricular no PYTHON BASE, PYTHON WEB API, PYTHON para DEVOPS e PYTHON ENGINEER após completar o Python Essentials.
+
+Links úteis:
+Repositório com scripts e anotações: 
+https://github.com/rochacbruno/python-base/
+
+Siga o instrutor no twitter: 
+https://twitter.com/rochacbruno
+No YouTube
+https://Youtube.com/CodeShowBR
+
+No Discord 
+ https://discord.gg/QpgsRsbg2a 
+(este treinamento não tem um grupo dedicado, mas você pode interagir no grupo geral sobre Python)
+
+##############################################
+INSTALAÇÃO DO PYTHON E PREPARAÇÃO DO AMBIENTE
+##############################################
+
+
+[ERRATA] No começo do vídeo eu recomendei que seria opcional pular este vídeo, porém a plataforma precisa que você complete pelo menos 90% do vídeo por conta do certificado :) assiste ai mesmo que você já tenha o Python que eu mostro meu editor neste vídeo e pode ser que você queira também utiliza-lo.
+
+[Opcional] configurações do editor micro: https://github.com/rochacbruno/dotfiles/tree/master/.config/micro#readme
+
+Instalação
+Python
+O caminho recomendado para instalação do Python é através do site oficial http://python.org na página de downloads pode obter o instalador para o seu sistema operacional.
+
+Para este treinamento usaremos o Python 3.6+, ou seja, qualquer versão acima do 3.6 irá funcionar.
+
+Se estiver em um sistema Linux, provavelmente o Python já se encontra instalado ou pode obte-lo através do gerenciador de pacotes do seu sistema.
+
+Caso não possa instalar por algum motivo, temos ainda a alternativa de usar o Python online através das ferramantar http://replit.com ou https://gitpod.io para essas 2 ferramentas é necessário ter um cadastro no Github.
+
+Instalando Python 3 - Windows:
+Visite https://www.python.org/downloads/windows/
+Clique em Latest Python 3 Release
+No fim da página, faça o download de Windows X86-64 executable installer
+Instale o arquivo obtido no passo 3
+Instalando Python 3 - Linux:
+O Python 3 já está presente nas últimas versões de usuário das distribuições mais famosas de GNU/Linux, como Ubuntu, Debian openSUSE e Fedora.
+
+Terminal
+Você pode usar o terminal de sua preferência desde que seja compatível com Linux, no windows por exemplo pode usar o WSL (Windows Subsystem for Linux) que abre um terminal Linux dentro do windows.
+
+A título de curiosidade, no meu ambiente utilizo Arch Linux, i3wm, Terminator, ZSH e starship.rs
+
+Editor
+A escolha de editor é pessoal, escolha o que gostar mais e que te dê maior conforto e produtividade, eu vou recomendar que você evite neste primeiro momento o uso de IDE (Ambiente Integrado) as IDEs são muito boas mas abstraem muitas coisas e por exemplo, ao invés de ir ao terminal e dar os comandos para rodar o programa, na IDE você cai na tentação de apertar um botão "> run" que você acaba nem sabendo o que ele faz exatamente.
+
+Minha recomendação para nosso workflow de trabalho é que você mantenha sempre 2 terminais abertos no seu sistema lado a lado, um para escrevermos o código e outro para executarmos.
+
+No caso de editor de terminal eu recomendo usar o micro-editor pois ele é leve e tem funcionamento bem simples, mas você pode também preferir usar outros como nano, vim, neovim, emacs mas eu só os recomendo caso você já tenha algum conhecimento no funcionamento deles.
+
+Fique a contade para usar editores gráficos como Visual Studio Code ou Sublime Text.
+
+A título de curiosidade eu utilizo 3 editors e estou sempre alternando entre eles micro-editor, vim e vscode, dependendo da tarefa eu acabo escolhendo um deles.
+
+[Opcional] configurações do editor micro: https://github.com/rochacbruno/dotfiles/tree/master/.config/micro#readme
+
+Python
+Agora em seu terminal já pode começar a interagir com o Python diretamente através do comando python.
+
+Para verificar a versão que está instalada use o comando
+
+python --version
+é muito importante que a versão seja pelo menos 3.6 (ou maior)
+
+Para enviar uma instrução (ou comando) para o Python, use o -c
+
+python -c "1 + 1"
+No comando acima o Python recebe a expressão 1 + 1 interpreta, executa a operação matemática de adição, porém não exibe nenhum output, para ter a resposta na tela precisamos usar a função print
+
+python -c "print(1 + 1)"
+2
+
+Outra maneira de se comunicar com o Python é através da execução de módulos com o -m
+
+Para obter informações sobre os caminhos de instalação do Python
+
+python -m site
+-m nome_do_modulo executa um módulo que esteja instalado e habilitado para execução direta, alguns exemplos json, http.server, pip, site
+
+E finalmente para abrir o terminal interativo use apenas python
+
+python
+>>>
+
+O sinal >>> é o prompt do Python e significa que ele está a espera de um comando ali você pode digitar 1 + 1 ou qualquer operação matemática ou fazer chamadas de funções como print("bruno".upper())
+
+
+##############################################
+INTRODUÇÃO AO GIT E SEU PRIMEIRO SCRIPT PYTHON
+##############################################
+
+
+Seu primeiro script
+Repositório
+Antes de começar a programar seu primeiro script será necessário criar um repositório no github, neste local vamos armazenar e controlar o histórico de alterações do programa.
+
+Para um criar o repositório, após fazer login no github acesse https://github.com/new basta preencher o nome com python-base e clicar em create repository.
+
+O seu novo repositório estará acessível em:
+
+https://github.com/USERNAME/python-base
+
+USERNAME deve ser substituido pelo seu nome de usuário do github.
+Configure seu github
+O primeiro passo é certificar que localmente no seu computador ou no terminal em que você está usando para o treinamento você possui o git e ele esteja configurado para seu usuário, basta digitar os comandos:
+
+Substitua "Seu Nome" pelo seu nome completo
+git config --global user.name "Seu Nome"
+Substitua "email@domain" pelo seu verdadeiro e-mail, o mesmo utilizado no github
+git config --global user.email "email@domain"
+Opcionalmente, você pode dizer ao git qual seu editor de código favorito
+
+Substitua "micro" pelo seu editor de escolha ex: vim, nano, code, sublime
+git config --global core.editor "micro"
+Clone
+Agora que seu git está configurado, vamos fazer o clone do seu repositório este processo vai criar uma cópia do repositório na sua máquina local.
+
+Para fazer o clone existem alguns detalhes:
+
+Escolha o caminho onde vai armazenar seu projeto, eu por exemplo coloco na minha pastas de usuário em um subdiretório chamado Projects ex: ~/Projects acesse esta pasta antes de fazer o clone, você pode escolher o local que preferir.
+mkdir ~/Projects  # caso ainda não exista
+cd ~/Projects
+Agora você precisa escolher entre 2 modos de autenticação, o github suporta https e ssh, o ssh é o mais seguro e recomendado, mas exige que você tenha suas chaves SSH configuradas, você pode ver como fazer isso aqui: https://docs.github.com/pt/authentication/connecting-to-github-with-ssh
+Efetue o clone
+Por https (não precisa de SSH, só tem que informar usuario e senha quando for alterar o repositório)
+
+git clone https://github.com/USERNAME/python-base
+por SSH (vantagem é não precisar informar usuário e senha quando alterarmos o repositório)
+
+git clone git@github.com:USERNAME/python-base.git
+Acesse seu repositório
+
+cd python-base
+Durante o treinamento usaremos com frequencia os seguintes comandos do git:
+
+git status para verificar o estado dos arquivos e se existem mudanças a aplicar
+git add para adicionar arquivos novos e adicionar mudanças em arquivos existentes
+git commit para confirmar uma alteração e marcar um checkpoint no histórico do repositório
+git push para enviar as mudanças locais para o github
+git pull para baixar mudanças do github para o local
+git commit -p para o commit em modo interativo
+Seu Primeiro Script :)
+Obrigatoriamente seu primeiro script deve ser um programa que imprime na tela a frase "Hello, World!"
+
+Um script nada mais é do que o conjunto de comandos que enviamos individualmente ao interpretador mas de uma forma organizada em um único arquivo.
+
+Da mesma forma que é possível executar
+
+python -c "print('Hello, World!')"
+python -c "print(1 + 1)"
+VocÊ pode criar um arquivo e colocar os comandos em sequencia, linha a linha dentro dele.
+
+utilize o editor de sua preferencia para criar um arquivo
+micro hello.py
+Com o editor aberto coloque o conteúdo do seu script.
+
+print("Hello, World!")
+Salve o script ctrl + S na maioria dos editores e em outro terminal execute
+
+python3 hello.py
+Hello, World!
+
+repare que usamos python3 para ser especifico em relação a versão do python utilizada para executar.
+Ao escrever uma nova parte do código é muito importante após efetuar os testes fazer o commit para salvar o código.
+# exibe o status do repositório
+git status
+
+# adiciona o arquivo novo ou alterado no histórico do git
+git add hello.py
+
+# Efetua um commit marcando a alteração\
+git commit -m "Criado meu primeiro hello world"
+
+# envia as mudanças para o Github
+git push   # sua senha pode ser pedida aqui caso tenha usado https
+Comentários no código
+Em python é possível adicionar partes do código que serão ignoradas pelo interpretador, essas linhas são úteis para adicionar comentários, lembretes e metadados do programa.
+
+Exemplos
+
+# Comentário de linha
+
+print("Hello")  # Comentário de final de linha
+
+"""
+comentário 
+multi
+linhas
+"""
+As linhas iniciadas em # são ignoradas pelo Python assim como tudo que estiver após # em uma linha de código e também todo o contéudo dentro de """
+
+Shebang
+Em ambientes Linux é muito importante definir o comentário especial Shebang, nele especificamos qual interpretador será usado para executar o programa
+
+#!/usr/bin/env python3
+
+print("Hello, World!")
+A primeira linha informa o terminal que aquele programa roda com o Python3 da env em execução, esta forma é possivel omitir o interpretador e executar o script diretamente pelo seu nome.
+
+# primeiro damos parmissão de execução ao script
+chmod +x hello.py
+Agora podemos executar de 2 formas
+
+# especificando o interpretador na linha de comando
+python3 hello.py
+
+# usando o interpretador especificado na linha `#!/usr/bin/env python`
+./hello.py
+A vantagem da segunda forma é que podemos mudar a extensão de .py para .exe por exemplo, ou podemos até remover a extensão e executar ./hello
+
+
+
+##############################################
+USANDO VARIAVEIS E CONDICIONAIS 
+##############################################
+
+Docstring e metadados dunder
+Em todo script Python é uma boa prática incluir um comentário de multi linhas logo nas primeiras linhas do script explicando o objetivo do script e provendo documentação para o usuário.
+
+#!/usr/bin/env python3
+"""Hello World Multi Linguas.
+
+Dependendo da lingua configurada no ambiente o programa exibe a mensagem 
+correspondente.
+
+Como usar:
+
+Tenha a variável LANG devidamente configurada ex:
+
+    export LANG=pt_BR
+
+Execução:
+
+    python3 hello.py
+    ou
+    ./hello.py
+"""
+__version__ = "0.0.1"
+__author__ = "Bruno Rocha"
+__license__ = "Unlicense"
+
+
+
+E além do comentário de documentação, chamado DocString é também comum a inclusão de variavéis de metadados que inician e terminam com 2 underlines __ a palavra que usamos para designar essas variavéis é Dunder portanto, Dunder version se refere a __version__.
+
+Variavéis de Ambiente
+Ambiente é o termo que usamos para referir ao local onde o programa é executado, o ambiente em termos gerais é formado por um shell que em termos bem simplificados pode ser entendido como um local isolado onde o seu programa executa.
+
+Neste ambiente existem variavéis que servem para configurar o comportamento do próprio ambiente, do sistema e dos programas que rodam.
+
+No linux ao digitar env no terminal você verá uma lista de todas as variáveis do ambiente, ali por exemplo está o nome do usuário em USER e a linguagem em que o sistema operacional está configurado LANG.
+
+Podemos dentro do Python acessar essas variáveis de ambiente atráves do módulo os.
+
+import os
+
+os.environ  # um dicionário Python contendo as variavéis e seus valores
+
+os.getenv("LANG")  # função usada para buscar o valor de uma variável especifica.
+Obtendo uma parte de um texto (substring)
+Em nosso primeiro programa irá ler a variável de ambiente LANG e apartir dela decidir qual mensagem de Hello World imprimir na tela, portanto se for pt_BR imprimimos Olá, Mundo! se for it_IT será Ciao, Mondo! e assim por diante.
+
+O problema é que o comando os.getenv("LANG") vai retornar algo como en_US.utf8 e nós queremos apenas a primeira parte antes do ., nesse caso queremos en_US ignorando a parte .utf8 e existem algumas formas de obter isso em Python.
+
+# Variável completa
+>>> os.getenv("LANG")
+'en_US.utf8'
+
+# Apenas os 5 primeiros caractered
+>>> os.getenv("LANG")[:5]
+'en_US'
+
+# Com um valor default em caso da variável não existir
+>>> os.getenv("LANG", "en_US")[:5]
+'en_US'
+
+# Através do aplit do texto
+>>> os.getenv("LANG", "en_US").split(".")[0]
+'en_US'
+Em nosso programa vamos por enquanto escolher a versão
+
+>>> os.getenv("LANG", "en_US")[:5]
+'en_US'
+Iremos explorar o significado de [:5] logo mais quando falarmos de iteração de objetos :)
+
+Portanto nosso script agora contém:
+
+#!/usr/bin/env python3
+"""Hello World Multi Linguas.
+
+Dependendo da lingua configurada no ambiente o programa exibe a mensagem 
+correspondente.
+
+Como usar:
+
+Tenha a variável LANG devidamente configurada ex:
+
+    export LANG=pt_BR
+
+Execução:
+
+    python3 hello.py
+    ou
+    ./hello.py
+"""
+__version__ = "0.0.1"
+__author__ = "Bruno Rocha"
+__license__ = "Unlicense"
+
+
+
+import os
+
+current_language = os.getenv("LANG", "en_US")[:5]
+
+msg = "Hello, World!"
+
+print(msg)
+E agora em posse do valor current_language podemos usar as condicionais para decidir qual mensagem iremos exibir na tela :)
+
+Condicionais
+Em nosso programa precisamos usar um valor de uma variável current_language para tomar uma decisão de qual mensagem exibir na tela, decisões que alteram o fluxo de execução do código são chamadas de "Condicionais".
+
+Em Python o statement if é usado para definir um teste e sempre usamos if junto com uma expressão de comparação como por exemplo 1 > 2 e neste caso teriamos a condicional: se 1 for maior que 2 (execute determinada instrução) traduzindo isso para código seria:
+
+if 1 > 2:
+    # faça algo aqui
+
+Portanto agora podemos alterar nosso script e adicionar a condicional que irá alterar o valor de msg dependendo da linguagem definida no ambiente.
+
+if current_language == "pt_BR":
+	msg = "Olá, Mundo!"
+elif current_language == "it_IT":
+	msg = "Ciao, Mondo!"
+elif current_language == "fr_FR":
+	msg = "Bonjour, Monde!"
+Repare que usamos == para determinar uma expressão de comparação e usamos elif para adicionar mais condições ao bloco de código.
+
+E encaixando isso no script.
+
+#!/usr/bin/env python3
+"""Hello World Multi Linguas.
+
+Dependendo da lingua configurada no ambiente o programa exibe a mensagem 
+correspondente.
+
+Como usar:
+
+Tenha a variável LANG devidamente configurada ex:
+
+    export LANG=pt_BR
+
+Execução:
+
+    python3 hello.py
+    ou
+    ./hello.py
+"""
+__version__ = "0.0.1"
+__author__ = "Bruno Rocha"
+__license__ = "Unlicense"
+
+import os
+
+current_language = os.getenv("LANG", "en_US")[:5]
+
+msg = "Hello, World!"
+
+
+# Aqui aplicamos a condicional
+
+if current_language == "pt_BR":
+	msg = "Olá, Mundo!"
+elif current_language == "it_IT":
+	msg = "Ciao, Mondo!"
+elif current_language == "fr_FR":
+	msg = "Bonjour, Monde!"
+
+print(msg)
+Execute o script no terminal usando
+
+LANG=it_IT python3 hello.py
+E experimente substituir o valor de LANG para testar a funcionalidade do script.
+
+Pode também persistir o valor exportando a variável para o ambiente antes de executar:
+
+export LANG=fr_FR
+python3 hello.py
+Commit
+Agora que o código está funcionando é importante adicionar ao histórico do git.
+
+# veja a lista de alterações a serem aplicadas
+git status
+
+# adicione o script
+git add hello.py
+
+# faça o commit
+git commit -m "Implementei o script multi linguas"
+
+# mande para o repositório do Github
+git push
+:)
+
